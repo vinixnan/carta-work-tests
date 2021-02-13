@@ -1,7 +1,9 @@
 name: conda-work-tests
+channels:
+ - conda-forge
 
 dependencies:
-  - python=3.6.6
+  - python=3.7.3
   - numpy
   - pandas
   - matplotlib
@@ -12,3 +14,8 @@ dependencies:
   - sqlalchemy-utils
   - psycopg2
   - postgresql
+  - pyarrow
+  - pluggy
+  - flask
+  - flask-restplus
+  - werkzeug=0.16.1

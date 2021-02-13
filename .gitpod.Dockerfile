@@ -17,4 +17,4 @@ RUN wget -qO- "https://repo.continuum.io/miniconda/Miniconda3-py37_4.8.3-Linux-x
 ENV PATH="/usr/local/miniconda/bin:${PATH}"
 RUN sudo /usr/local/miniconda/bin/conda install -y conda-build conda-verify anaconda-client && sudo chown -R gitpod /usr/local
 ADD environment.yml /usr/local/environment.yml
-RUN conda env update -n root -f /usr/local/environment.yml
+RUN conda env update -n root -f /usr/local/environment.yml && echo "export PATH=/usr/local/miniconda/bin:$PATH" >> ~/.bashrc
