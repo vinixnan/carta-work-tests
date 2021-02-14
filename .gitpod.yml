@@ -1,8 +1,8 @@
 image:
   file: .gitpod.Dockerfile
-
 tasks:
   - init: createdb test_01 test_02 test_03 test_04 test_05 test_06 test_07 test_08 test_09 test_10
+  - init: python setup.py develop
 ports:
   - port: 5432
     onOpen: ignore
