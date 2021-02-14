@@ -5,7 +5,8 @@ These are the work tests for interviews at Carta. To get started, just click the
 
 # Completeing Tests
 Your contact at Carta will tell you which test numbers you've been tasked with. Each test has a 
-README.md which describes everything you need to do for the test. 
+README.md which describes everything you need to do for the test. E.g. if you're told to do tests 2 and 4, check out
+test_02/README.md and test_03/README.md for instructions.
 
 # Submitting Results
 Once you have completed all of your required tests, click on the "Workspace" menu at the top, click "Share Workspace Snapshot," and send the resulting
