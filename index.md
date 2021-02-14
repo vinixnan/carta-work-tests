@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+# carta-work-tests
+These are the work tests for interviews at Carta. To get started, just click the Button below. It will open up an interactive IDE in GitPod, which will have all you need to get started.
 
-You can use the [editor on GitHub](https://github.com/carta-healthcare/carta-work-tests/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/carta-healthcare/carta-work-tests)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Completeing Tests
+Your contact at Carta will tell you which test numbers you've been tasked with. Each test has a 
+README.md which describes everything you need to do for the test. 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/carta-healthcare/carta-work-tests/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# Submitting Results
+Once you have completed all of your required tests, click on the "Workspace" menu at the top, click "Share Workspace Snapshot," and send the resulting
+link back to us.
