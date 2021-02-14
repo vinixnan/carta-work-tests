@@ -4,6 +4,7 @@ channels:
 
 dependencies:
   - python=3.7.3
+  - pytest
   - numpy
   - pandas
   - matplotlib
@@ -19,3 +20,5 @@ dependencies:
   - flask
   - flask-restplus
   - werkzeug=0.16.1
+  - jupyter
+  - ipython
