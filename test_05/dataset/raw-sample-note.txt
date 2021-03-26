@@ -8,12 +8,14 @@ PATIENT INFO:
 Male
 Birth date:  6/1/1998
 
-
+ENCOUNTER INFO:
+hospital admission:  2000-2-2 2pm
+hospital discharge:  2000-2-5 12pm
 
 NOTES:
 
-Patient was admitted to the hospital on 2/1/2000.  Atrial Septal Defect was diagnosed after echocardiogram on 2/2.
+Patient was admitted to the hospital on Feb 2nd.  Atrial Septal Defect was diagnosed after echocardiogram on 2/2.
 
-Patient entered the CV-ICU on 2/3.  ASD transcatheter repair was successfully performed on 2/5/2020.
+Patient entered the CV-ICU on 2/3 at 8am and was discharged on 2/5 at 3:30am.  ASD transcatheter repair was successfully performed on 2/5/2000.
 
-Patient discharged from the hospital on 2/18 to home.
+Patient discharged from the hospital at noon on 2/5 to home.

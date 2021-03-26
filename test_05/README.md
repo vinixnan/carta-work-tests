@@ -16,6 +16,7 @@ Your goal is to answer the following questions:
  1. Write a function that converts the parsed clinical note into FHIR Encounter and Procedure resources
  2. What was the patient's VIS score at all times from hospital admission to discharge?
  3. What was the patient's maximum VIS score in their first 24 hours after CICU admission?
+ 4. What VIS category does the patient fall into?
 
 ### FHIR Resources
 The output for 1) should be a function or functions which examine the parsed clinical note, and produce two [FHIR Encounter resources](https://www.hl7.org/fhir/encounter.html) (one for the hospitalization and one for the CICU stay), and one [FHIR Procedure resources](https://www.hl7.org/fhir/procedure.html) following the official documentation.  All FHIR resources can be in the form of Python dictionaries which follow the schema in the documentation.
@@ -33,7 +34,7 @@ Bonus:
 
 
 ### VIS Score Time-Series
-The output for 2) should look like a plot with time on the X-axis, and VIS score on the Y-axis.  Significant points in time should be clearly indicated.
+The output for 2) should look like a plot with time on the X-axis, and VIS score on the Y-axis.  Significant points in time should be clearly indicated.  This plot should start at hospital admit and end at hospital discharge.
 
 * results/VIS_timeseries.png
 
@@ -44,6 +45,7 @@ The output for 3) should be a function which takes only FHIR resources as inputs
     "value":  <the max VIS score>,
     "start_datetime":  <when the patient had the max VIS score (start of interval)>,
     "duration":  <total number of minutes the patient was at the maximum VIS score>,
+    "classification_group":  <number 1,2,3,4,5 based on VIS paper Table 1>
 }
 ```
 * results/maximum_VIS_score.json
