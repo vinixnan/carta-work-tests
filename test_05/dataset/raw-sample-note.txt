@@ -1,0 +1,19 @@
+Patient Operative Note:
+
+Name:  Sherlock Holmes
+Author:  John Watson
+Date:  3/1/2000
+
+PATIENT INFO:
+Male
+Birth date:  6/1/1998
+
+
+
+NOTES:
+
+Patient was admitted to the hospital on 2/1/2000.  Atrial Septal Defect was diagnosed after echocardiogram on 2/2.
+
+Patient entered the CV-ICU on 2/3.  ASD transcatheter repair was successfully performed on 2/5/2020.
+
+Patient discharged from the hospital on 2/18 to home.

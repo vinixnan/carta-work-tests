@@ -1,0 +1,37 @@
+[
+    {
+        "id": "med1_base",
+        "code": {
+            "coding": [
+                {
+                    "code": "373441005",
+                    "system": "https://www.snomed.org/",
+                    "display": "Milrinone"
+                }
+            ],
+            "text": "milrinone"
+        }
+    },
+    {
+        "id": "med1_package",
+        "code": {
+            "coding": [
+                {
+                    "code": "373441005",
+                    "system": "https://www.snomed.org/",
+                    "display": "Milrinone"
+                }
+            ],
+            "text": "milrinone"
+        },
+        "form": {},
+        "amount": {},
+        "ingredient": [
+            {
+                "itemReference": {},
+                "isActive": true,
+                "strength": null
+            }
+        ]
+    }
+]
