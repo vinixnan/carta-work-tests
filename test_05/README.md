@@ -19,15 +19,15 @@ Your goal is to answer the following questions:
  4. What VIS category does the patient fall into?
 
 ### FHIR Resources
-The output for 1) should be a function or functions which examine the parsed clinical note, and produce [FHIR Encounter resources](https://www.hl7.org/fhir/encounter.html) (one for the hospitalization and one for the CICU stay), and [FHIR Procedure resources](https://www.hl7.org/fhir/procedure.html) following the official documentation.  All FHIR resources can be in the form of Python dictionaries which follow the schema in the documentation.
+The output for 1) should be a function or functions which examine the parsed clinical note and procedure log, and produce [FHIR Encounter resources](https://www.hl7.org/fhir/encounter.html) (one for the hospitalization and one for the CICU stay), and [FHIR Procedure resources](https://www.hl7.org/fhir/procedure.html) following the official documentation.  All FHIR resources can be in the form of Python dictionaries which follow the schema in the documentation.
 
-Each FHIR resources should be saved to following named .json files.
-* results/encounters.json
-* results/procedures.json
+Each FHIR resource should be saved to following named .json file.
+* results/fhir_resources.json
 
 Bonus / Optional:
-* results/patients.json
-* results/conditions.json
+* Patient resource(s)
+* Practitioner resource(s)
+* Condition resource(s)
 
 
 ### VIS Score Time-Series
@@ -48,7 +48,7 @@ The output for 3) should be a function which takes only FHIR resources as inputs
 ```
 
 These results should be saved to the following named .json file.
-* results/maximum_VIS_score.json
+* results/maximum_VIS_score_info.json
 
 # Dataset Overview
 Here is an explanation of the dataset you have been given:
@@ -58,20 +58,20 @@ Here is an explanation of the dataset you have been given:
 The raw text of the sample clinical note provided for your reference.  No processing should be performed directly on this note.
 
 ## parsed-sample-note.json
-The output after the raw sample note is fed through the Natural Language Processing pipeline.  Entities in the note are coded under UMLS.  Use the coded entities to construct the required FHIR resources.
+The output after the raw sample note is fed through the Natural Language Processing pipeline.  Entities in the note are coded under UMLS.  Use the coded entities to find relevant information and construct the required FHIR resources.
 
 https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt
 
 
 | UMLS Code | Term |
-|----------|----------------------|
-| C0018817 | Atrial Septal Defect |
-| C0018817 | Male |
-
-birth date
-gender
-male
-female
+|----------|------------------------|
+| C0018817 | Atrial Septal Defect   |
+| C0803906 | Birth Date             |
+| C0086582 | Male                   |
+| C0086287 | Female                 |
+| C0184666 | Hospital Admission     |
+| C0586003 | Hospital Discharge     |
+| C2243117 | Echocardiogram         |
 
 
 ## medication-administrations.json
@@ -102,7 +102,7 @@ python test_05/run.py
 
 # Notes
 Feel free to change out any stub class implementations, add unit tests (pytest), etc. Whatever 
-you'd do normally as part of your workflow! The only thing that matters is that `python test_04/run.py`
+you'd do normally as part of your workflow! The only thing that matters is that `python test_05/run.py`
 will produce the answers we're looking for.
 
 
