@@ -6,37 +6,35 @@ In this analysis, you are assuming the role of a data scientist assigned the goa
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4159673/
 The full text has also been provided as a PDF.
 
-You have been given a dataset of the supplies that are used for each surgical case, and also a second dataset which gives you the price of each of the items used in surgery. The dataset encompasses the last month of surgeries at your hospital.
+You have been given a dataset of the medications that are used for each medication administration, a sample clinical note, and a procedure log.
 
 You will use [FHIR](https://www.hl7.org/fhir) as a common schema across the various data sources.
 
-## The Goal
+# The Goal
 Your goal is to answer the following questions:
 
- 1. Write a function that converts the parsed clinical note into FHIR Encounter and Procedure resources
+ 1. What clean FHIR resources can be extracted from the parsed clinical note and procedure log?
  2. What was the patient's VIS score at all times from hospital admission to discharge?
  3. What was the patient's maximum VIS score in their first 24 hours after CICU admission?
  4. What VIS category does the patient fall into?
 
 ### FHIR Resources
-The output for 1) should be a function or functions which examine the parsed clinical note, and produce two [FHIR Encounter resources](https://www.hl7.org/fhir/encounter.html) (one for the hospitalization and one for the CICU stay), and one [FHIR Procedure resources](https://www.hl7.org/fhir/procedure.html) following the official documentation.  All FHIR resources can be in the form of Python dictionaries which follow the schema in the documentation.
+The output for 1) should be a function or functions which examine the parsed clinical note, and produce [FHIR Encounter resources](https://www.hl7.org/fhir/encounter.html) (one for the hospitalization and one for the CICU stay), and [FHIR Procedure resources](https://www.hl7.org/fhir/procedure.html) following the official documentation.  All FHIR resources can be in the form of Python dictionaries which follow the schema in the documentation.
 
-Each FHIR resources should be saved to a clearly named .json file.
+Each FHIR resources should be saved to following named .json files.
+* results/encounters.json
+* results/procedures.json
 
-* results/hospital-encounter.json
-* results/cicu-encounter.json
-* results/asd-procedure.json
-
-Bonus:
-* results/patient.json
-* results/asd-condition.json
-* results/echo-procedure.json
+Bonus / Optional:
+* results/patients.json
+* results/conditions.json
 
 
 ### VIS Score Time-Series
-The output for 2) should look like a plot with time on the X-axis, and VIS score on the Y-axis.  Significant points in time should be clearly indicated.  This plot should start at hospital admit and end at hospital discharge.
+The output for 2) should look like a plot with time on the X-axis, and VIS score on the Y-axis.  Significant points in time should be clearly indicated.  This plot should start at hospital admit and end at hospital discharge.  Also save the raw data as a .csv file with the columns:  timestamp, vis_score
 
 * results/VIS_timeseries.png
+* results/VIS_timeseries.csv
 
 ### Max VIS Score
 The output for 3) should be a function which takes only FHIR resources as inputs, and returns the following
@@ -48,6 +46,8 @@ The output for 3) should be a function which takes only FHIR resources as inputs
     "classification_group":  <number 1,2,3,4,5 based on VIS paper Table 1>
 }
 ```
+
+These results should be saved to the following named .json file.
 * results/maximum_VIS_score.json
 
 # Dataset Overview
@@ -64,8 +64,9 @@ https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt
 
 
 | UMLS Code | Term |
-|---|---|
-|   | Atrial Septal Defect |
+|----------|----------------------|
+| C0018817 | Atrial Septal Defect |
+| C0018817 | Male |
 
 birth date
 gender
