@@ -1,14 +1,12 @@
 # Introduction
-This is a test for seeing how well you can get around with typically messy clinical data provided in various forms, including clinical notes processed with NLP, and the ability to interpret literature to a real-world situation
+This is a test for seeing how well you can get around with typically messy clinical data provided in various forms, including clinical notes processed with NLP, and the ability to interpret published literature to a real-world use-case.
 
-In this analysis, you are assuming the role of a data scientist assigned the goal of automating a field in a cardiac registry concerned with pharmacologic cardiovascular support in infants undergoing cardiac surgery with bypass.  In particular, you will be examining the vasoactive-inotropic score (VIS) as defined in the following publication:
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4159673/
-The full text has also been provided as a PDF.
+In this analysis, you are assuming the role of a data scientist assigned the goal of automating a field in a cardiac registry concerned with pharmacologic cardiovascular support in infants undergoing cardiac surgery with bypass.  In particular, you will be examining the vasoactive-inotropic score (VIS) as defined in the following publication:  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4159673/.  The full text has also been provided as a PDF.
 
 You have been given a dataset of the medications that are used for each medication administration, a sample clinical note, and a procedure log.
 
-You will use [FHIR](https://www.hl7.org/fhir) as a common schema across the various data sources.
+You will use [FHIR](https://www.hl7.org/fhir) as a common schema across the various data sources.  You can find the specifications for all FHIR resources [here](https://www.hl7.org/fhir/resourcelist.html).
+
 
 # The Goal
 Your goal is to answer the following questions:
@@ -28,7 +26,6 @@ Bonus / Optional:
 * Patient resource(s)
 * Practitioner resource(s)
 * Condition resource(s)
-
 
 ### VIS Score Time-Series
 The output for 2) should look like a plot with time on the X-axis, and VIS score on the Y-axis.  Significant points in time should be clearly indicated.  This plot should start at hospital admit and end at hospital discharge.  Also save the raw data as a .csv file with the columns:  timestamp, vis_score
@@ -50,6 +47,8 @@ The output for 3) should be a function which takes only FHIR resources as inputs
 These results should be saved to the following named .json file.
 * results/maximum_VIS_score_info.json
 
+
+
 # Dataset Overview
 Here is an explanation of the dataset you have been given:
 
@@ -58,10 +57,9 @@ Here is an explanation of the dataset you have been given:
 The raw text of the sample clinical note provided for your reference.  No processing should be performed directly on this note.
 
 ## parsed-sample-note.json
-The output after the raw sample note is fed through the Natural Language Processing pipeline.  Entities in the note are coded under UMLS.  Use the coded entities to find relevant information and construct the required FHIR resources.
+The output after the raw sample note is fed through the Natural Language Processing pipeline.  Entities in the note are coded under the [Unified Medical Language System (UMLS)](https://www.nlm.nih.gov/research/umls/index.html).  Use the coded entities to find relevant information and construct the required FHIR resources.  [Semantic types](https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt) are broad categories of medical terms in the UMLS.
 
-https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt
-
+### Relevant UMLS terms/codes
 
 | UMLS Code | Term |
 |----------|------------------------|
